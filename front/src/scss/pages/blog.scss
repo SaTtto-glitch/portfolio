@@ -1,0 +1,25 @@
+.blogHeader {
+  height: 200px;
+  background-color: rgb(32, 49, 44);
+}
+
+.blogContainer {
+  margin: 0 20px;
+  padding: 20px 0;
+  color: #666;
+}
+
+.blogArchiveGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.blogDetailContent {
+  margin: 0 20px;
+  color: #666;
+
+  p {
+    margin: 20px 0;
+  }
+}
