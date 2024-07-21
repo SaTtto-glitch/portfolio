@@ -2,7 +2,6 @@ import { gsap, Power1 } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // import { isSp } from '../util/util'
 
-
 export const topInit = () => {
   sectionVisibilityObserver()
 }

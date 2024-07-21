@@ -1,8 +1,9 @@
 import { useEffect, useCallback, useState } from 'react';
 import { Modal } from './Modal';
 import { topInit } from '../js/top';
+import { IMG_PATH } from '../js/paths';
 
-export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
+export const HandleScroll = () => {
   /* モーダルの開閉を管理するstate */
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalCardType, setModalCardType] = useState('');
@@ -35,20 +36,20 @@ export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
           <div className="section__inner">
             <div className="section__titleBlock">
               <h2 className="section__titleBlock--title">
-                <img src="img/top/profile.svg" alt="" />
+                <img src={`${IMG_PATH}top/profile.svg`} alt="" />
               </h2>
             </div>
 
             <div className="column">
               <div className="column__item u-center">
                 <div>
-                  <img src="img/top/profile.JPG" alt="" />
+                  <img src={`${IMG_PATH}top/profile.jpg`} alt="" />
                 </div>
                 <div className="u-column">
                   <p className="logo-title">sayatto</p>
                   <div className="sns-icon">
                     <a href='https://github.com/SaTtto-glitch' target='_blank'>
-                      <img src="img/icon/github-mark.svg" alt="" />
+                      <img src={`${IMG_PATH}top/github-mark.svg`} alt="GitHub Mark" />
                     </a>
                   </div>
                 </div>
@@ -72,22 +73,22 @@ export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div >
+          </div >
         </section >
 
         <section className="sticky-container__box">
           <div className="section__inner">
             <div className="section__titleBlock">
               <h2 className="section__titleBlock--title">
-                <img src="img/top/works.svg" alt="" />
+                <img src={`${IMG_PATH}top/works.svg`} alt="" />
               </h2>
             </div>
             <div className="cardWrapper">
               <button className="card" onClick={() => openModal('dog')}  >
                 <div className='card__image'>
                   <img
-                    src="img/top/Dog_app.gif"
+                    src={`${IMG_PATH}top/Dog_app.gif`}
                     alt=""
                   />
                 </div>
@@ -96,7 +97,7 @@ export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
               <button className="card" onClick={() => openModal('forum')} >
                 <div className='card__image'>
                   <img
-                    src="img/top/Forum_app.gif"
+                    src={`${IMG_PATH}top/Forum_app.gif`}
                     alt=""
                   />
                 </div>
@@ -105,7 +106,7 @@ export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
               <div className="card" onClick={() => openModal('review')}>
                 <div className='card__image'>
                   <img
-                    src="img/top/Review_app.gif"
+                    src={`${IMG_PATH}top/Review_app.gif`}
                     alt=""
                   />
                 </div>
@@ -115,7 +116,7 @@ export const HandleScroll = ({ sectionId }: { sectionId: string }) => {
           {isModalOpen ? <Modal cardType={modalCardType} onClick={() => closeModal()} /> : ""}
         </section >
 
-      </div>
+      </div >
     </>
   );
 };

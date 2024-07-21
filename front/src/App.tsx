@@ -4,7 +4,7 @@ import { Top } from "./pages/top";
 // import BlogDetail from "./pages/BlogDetail";
 import "@/scss/index.scss";
 import Auth from './components/Auth';
-import Admin from './pages/admin';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
       <Routes>
         {/* <Route path="/portfolio-v2/blog" element={<BlogPage />} />
         <Route path="/portfolio-v2/blog/:id" element={<BlogDetail />} /> */}
-        <Route path="/portfolio-v2/" element={<Top />} />
-        <Route path="/portfolio-v2/auth" element={<Auth />} />
-        <Route path="/portfolio-v2/admin" element={<Admin />} />
+        <Route path="/" element={<Top />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
   );

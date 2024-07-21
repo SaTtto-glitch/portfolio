@@ -22,7 +22,7 @@ export const Modal: React.FC<{ cardType: string; onClick: () => void }> = ({ car
       <div id="modal" className="modal" onClick={(event) => event.stopPropagation()}>
         {content}
         <button onClick={onClick}>
-          <img src="img/top/close.svg" alt="" />
+          <img src="../public/img/top/close.svg" alt="" />
         </button>
       </div>
     </div>
