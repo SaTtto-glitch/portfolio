@@ -1,10 +1,10 @@
-import { gsap, Power1 } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap, Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { isSp } from '../util/util'
 
 export const topInit = () => {
-  sectionVisibilityObserver()
-}
+  sectionVisibilityObserver();
+};
 
 const sectionVisibilityObserver = () => {
   // const spFlag = isSp()
@@ -50,70 +50,69 @@ const sectionVisibilityObserver = () => {
   // FlavorSection animation
 
   gsap.registerPlugin(ScrollTrigger);
-  const flavorSection = document.querySelector('.sticky-container')
-  const flavors = gsap.utils.toArray('.sticky-container__box')
-  const fixedBg = document.querySelector('.fixedBg')
+  const flavorSection = document.querySelector(".sticky-container");
+  const flavors = gsap.utils.toArray(".sticky-container__box");
+  const fixedBg = document.querySelector(".fixedBg");
 
   gsap.set(flavors, { autoAlpha: 0 });
 
   flavors.forEach((flavor: any, i) => {
-    console.log(i)
     ScrollTrigger.create({
       trigger: flavorSection,
       markers: true,
       // start: () => (window.innerHeight * i) + 200,
-      start: () => 'top -' + window.innerHeight * i,
-      end: () => '+=' + window.innerHeight,
+      start: () => "top -" + window.innerHeight * i,
+      end: () => "+=" + window.innerHeight,
       invalidateOnRefresh: true,
       onEnter: () => {
         if (i === 1) {
           gsap.to(fixedBg, {
             ease: Power1.easeOut,
-            duration: 0.5
-          })
+            duration: 0.5,
+          });
           gsap.fromTo(
             flavor,
             { autoAlpha: 0 },
-            { autoAlpha: 1, ease: Power1.easeOut, duration: 0.5 }
-          )
+            { autoAlpha: 1, ease: Power1.easeOut, duration: 0.5 },
+          );
         } else {
           gsap.fromTo(
             flavor,
             { autoAlpha: 0, y: 100 },
-            { autoAlpha: 1, y: 0, ease: Power1.easeOut, duration: 0.5 }
-          )
+            { autoAlpha: 1, y: 0, ease: Power1.easeOut, duration: 0.5 },
+          );
         }
       },
       onEnterBack: () => {
         if (i === 0) {
           gsap.to(fixedBg, {
             ease: Power1.easeOut,
-            duration: 0.5
-          })
+            duration: 0.5,
+          });
         }
         gsap.fromTo(
           flavor,
           { autoAlpha: 0 },
-          { autoAlpha: 1, ease: Power1.easeOut, duration: 0.5 }
-        )
+          { autoAlpha: 1, ease: Power1.easeOut, duration: 0.5 },
+        );
       },
       onLeave: () => {
         gsap.fromTo(
           flavor,
           { autoAlpha: 1 },
-          { autoAlpha: 0, ease: Power1.easeOut, duration: 0.5 }
-        )
+          { autoAlpha: 0, ease: Power1.easeOut, duration: 0.5 },
+        );
       },
       onLeaveBack: () => {
         gsap.fromTo(
           flavor,
           { autoAlpha: 1 },
-          { autoAlpha: 0, ease: Power1.easeOut, duration: 0.5 }
-        )
-      }
-    })
-    gsap.set(flavor, { autoAlpha: 0 })
-  })
+          { autoAlpha: 0, ease: Power1.easeOut, duration: 0.5 },
+        );
+      },
+    });
+    gsap.set(flavor, { autoAlpha: 0 });
+  });
 
   // Section Pin留め
   // ScrollTrigger.create({
@@ -225,10 +224,10 @@ const sectionVisibilityObserver = () => {
     trigger: flavorSection,
     scrub: true,
     pin: true,
-    start: () => 'top top',
-    end: () => '+=' + flavors.length * window.innerHeight,
-    invalidateOnRefresh: true
-  })
+    start: () => "top top",
+    end: () => "+=" + flavors.length * window.innerHeight,
+    invalidateOnRefresh: true,
+  });
   // }
 
   // FixedBg animation
@@ -236,23 +235,21 @@ const sectionVisibilityObserver = () => {
     trigger: flavorSection,
     scrub: true,
     start: () => window.innerHeight,
-    end: () =>
-      '+=' + (flavors.length + 1) * window.innerHeight,
+    end: () => "+=" + (flavors.length + 1) * window.innerHeight,
     invalidateOnRefresh: true,
     onEnter: () => {
-      fixedBg?.classList.add('is-active')
+      fixedBg?.classList.add("is-active");
     },
     onLeave: () => {
-      fixedBg?.classList.remove('is-active')
+      fixedBg?.classList.remove("is-active");
     },
     onEnterBack: () => {
-      fixedBg?.classList.add('is-active')
+      fixedBg?.classList.add("is-active");
     },
     onLeaveBack: () => {
-      fixedBg?.classList.remove('is-active')
-    }
-  })
-
+      fixedBg?.classList.remove("is-active");
+    },
+  });
 };
 
 // const scrollBlur = () => {
@@ -295,7 +292,3 @@ const sectionVisibilityObserver = () => {
 //     observer.observe(targets[i] as Element);
 //   }
 // };
-
-
-
-

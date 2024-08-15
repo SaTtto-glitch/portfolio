@@ -1,1 +1,1 @@
-export const IMG_PATH = "src/public/img/";
+export const IMG_PATH = "/assets/img/";
