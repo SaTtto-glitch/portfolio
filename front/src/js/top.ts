@@ -59,7 +59,7 @@ const sectionVisibilityObserver = () => {
   flavors.forEach((flavor: any, i) => {
     ScrollTrigger.create({
       trigger: flavorSection,
-      markers: true,
+      // markers: true,
       // start: () => (window.innerHeight * i) + 200,
       start: () => "top -" + window.innerHeight * i,
       end: () => "+=" + window.innerHeight,

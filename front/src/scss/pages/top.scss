@@ -39,7 +39,8 @@
   position: relative;
 
   .fixedBg {
-    background-color: #411445;
+    //黒透過背景
+    background-color: rgb(0 0 0 / 80%);
     height: 100lvh;
     inset: 0;
     opacity: 0;
