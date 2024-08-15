@@ -9,7 +9,7 @@ dotenv.config();
 export default defineConfig({
   root: "front",
   envDir: "../",
-  publicDir: "public",
+  publicDir: "src/public",
   build: {
     outDir: "../dist",
     emptyOutDir: true,
