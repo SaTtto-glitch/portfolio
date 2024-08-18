@@ -37,13 +37,22 @@ export function BlogDetail(): JSX.Element {
   }
 
   return (
-    <div>
-      <h1>{blog.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: blog.contents,
-        }}
-      />
+    <div className="bg-gray-50 py-12">
+      <div className="container mx-auto max-w-screen-md bg-white p-8 shadow-md rounded-lg">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{blog.title}</h1>
+        <div className="text-sm text-gray-500 mb-8">
+          {/* ここに記事のメタ情報を表示します */}
+          <p>投稿日: {blog.publishedAt}</p>
+          <p>更新日: {blog.updatedAt}</p>
+          {/* <p>カテゴリ: {blog.category || "未分類"}</p> */}
+        </div>
+        <div
+          className="max-w-none"
+          dangerouslySetInnerHTML={{
+            __html: blog.content,
+          }}
+        />
+      </div>
     </div>
   );
 }

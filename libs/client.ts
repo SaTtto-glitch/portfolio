@@ -3,7 +3,7 @@ import { createClient } from "microcms-js-sdk";
 // MicroCMSの基本的な型を拡張
 export type Blog = {
   title: string;
-  contents: string;
+  content: string;
 };
 
 if (!import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN) {

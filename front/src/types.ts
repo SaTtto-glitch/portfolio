@@ -11,6 +11,6 @@ export type MicroCMSDate = {
 
 export type Blog = {
   title: string;
-  contents: string;
+  content: string;
 } & MicroCMSContentId &
   MicroCMSDate;
