@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const FVblur = () => {
   const [scrollValue, setScrollValue] = useState(0);
@@ -10,9 +10,9 @@ export const FVblur = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -34,10 +34,11 @@ export const FVblur = () => {
       setIsBeyondThreshold(false);
     }
 
-    const fvElements = document.querySelectorAll('.fv__background');
+    const fvElements = document.querySelectorAll(".fv__background");
 
     fvElements.forEach((element) => {
-      const transitionValue = 'filter 0.5s ease, transform 0.5s ease, background-size 0.5s ease';
+      const transitionValue =
+        "filter 0.5s ease, transform 0.5s ease, background-size 0.5s ease";
 
       const backgroundElement = element as HTMLElement;
 

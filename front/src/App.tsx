@@ -1,7 +1,8 @@
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Top } from "./pages/top";
-// import BlogPage from "./pages/BlogTop";
-// import BlogDetail from "./pages/BlogDetail";
+import { BlogTop } from "./pages/blogs/blogTop";
+import { BlogDetail } from "./pages/blogs/blogDetail";
 import "@/scss/index.scss";
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Top />} />
+        <Route path="/blogs" element={<BlogTop />} />
+        <Route path="/blogs/:contentId" element={<BlogDetail />} /> 
       </Routes>
     </Router>
   );
