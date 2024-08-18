@@ -40,20 +40,21 @@ export function BlogTop(): JSX.Element {
             <Link
               to={`/blogs/${blog.id}`}
               key={blog.id}
-              className="block bg-white shadow-md overflow-hidden hover:bg-gray-100 transition"
+              className="block bg-white shadow-md overflow-hidden hover:bg-gray-100 transition flex flex-col md:flex-row"
+              style={{ minHeight: "200px" }}
             >
-              <div className="flex">
+              <div className="w-full md:w-2/4 h-48 md:h-auto max-h-[200px]">
                 <img
                   src={blog.eyecatch?.url}
                   alt={blog.title}
-                  className="w-1/3 h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
-                <div className="p-4 flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                      {blog.title}
-                    </h2>
-                  </div>
+              </div>
+              <div className="p-4 flex flex-col justify-between w-full">
+                <div>
+                  <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                    {blog.title}
+                  </h2>
                 </div>
               </div>
             </Link>
