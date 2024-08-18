@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { getBlogs } from "@/../../libs/client";
 import { Link } from "react-router-dom";
+import { Blog } from "@/types";
 
 export function BlogTop(): JSX.Element {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

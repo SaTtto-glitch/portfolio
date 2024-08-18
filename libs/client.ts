@@ -1,7 +1,7 @@
 import { createClient } from "microcms-js-sdk";
 
+// MicroCMSの基本的な型を拡張
 export type Blog = {
-  id: string;
   title: string;
   contents: string;
 };
