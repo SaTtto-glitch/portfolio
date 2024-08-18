@@ -41,7 +41,7 @@ export function BlogDetail(): JSX.Element {
       <h1>{blog.title}</h1>
       <div
         dangerouslySetInnerHTML={{
-          __html: blog.content,
+          __html: blog.contents,
         }}
       />
     </div>
