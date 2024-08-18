@@ -32,15 +32,34 @@ export function BlogTop(): JSX.Element {
   }
 
   return (
-    <div>
-      <h1>ブログ一覧</h1>
-      <ul>
-        {blogs.map((blog) => (
-          <li key={blog.id}>
-            <Link to={`/blogs/${blog.id}`}>{blog.title}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="container max-w-screen-lg mx-auto">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">sayatto備忘録</h1>
+        <div className="space-y-6">
+          {blogs.map((blog) => (
+            <Link
+              to={`/blogs/${blog.id}`}
+              key={blog.id}
+              className="block bg-white shadow-md overflow-hidden hover:bg-gray-100 transition"
+            >
+              <div className="flex">
+                <img
+                  // src={blog.thumbnail}
+                  alt={blog.title}
+                  className="w-1/3 h-auto object-cover"
+                />
+                <div className="p-4 flex flex-col justify-between">
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                      {blog.title}
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

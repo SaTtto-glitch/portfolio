@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDetail } from "@/../../libs/client";
-import { Blog } from "@/types"; // 型をインポート
+import { Blog } from "@/types";
 
 export function BlogDetail(): JSX.Element {
   const { contentId } = useParams<{ contentId: string }>();
-  const [blog, setBlog] = useState<Blog | null>(null); // Blog 型を使用
+  const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
