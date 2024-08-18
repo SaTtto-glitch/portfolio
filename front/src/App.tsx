@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Top } from "./pages/top";
 import { BlogTop } from "./pages/blogs/blogTop";
