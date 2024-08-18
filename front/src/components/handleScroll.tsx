@@ -60,7 +60,7 @@ export const HandleScroll = () => {
                   東京のWeb制作会社でマークアップエンジニアをしています。
                 </p>
                 <div>
-                  <div>
+                  <div className="mb-4">
                     <p className="column__item--title">▼ Skill</p>
                     <p>HTML/CSS/JavaScipt/WordPress/React/Docker/Git</p>
                   </div>
@@ -75,7 +75,7 @@ export const HandleScroll = () => {
           </div>
         </section>
 
-        <section className="sticky-container__box">
+        {/* <section className="sticky-container__box">
           <div className="section__inner">
             <div className="section__titleBlock">
               <h2 className="section__titleBlock--title">WORKS</h2>
@@ -105,7 +105,7 @@ export const HandleScroll = () => {
           ) : (
             ""
           )}
-        </section>
+        </section> */}
       </div>
     </>
   );

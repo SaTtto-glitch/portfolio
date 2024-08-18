@@ -42,7 +42,6 @@ export function BlogDetail(): JSX.Element {
         <div className="text-sm text-gray-500 mb-8">
           {/* ここに記事のメタ情報を表示します */}
           <p>投稿日: {blog.publishedAt}</p>
-          <p>更新日: {blog.updatedAt}</p>
           {/* <p>カテゴリ: {blog.category || "未分類"}</p> */}
         </div>
         <div
