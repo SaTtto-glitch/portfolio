@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { getBlogs } from "@/../../libs/client";
+import { getBlogs, Blog } from "@/../../libs/client";
 import { Link } from "react-router-dom";
-import { Blog } from "@/types";
 
 export function BlogTop(): JSX.Element {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -13,6 +12,7 @@ export function BlogTop(): JSX.Element {
       try {
         const { contents } = await getBlogs();
         setBlogs(contents);
+        console.log(contents);
       } catch (err) {
         setError("ブログデータの取得に失敗しました");
       } finally {
@@ -44,7 +44,7 @@ export function BlogTop(): JSX.Element {
             >
               <div className="flex">
                 <img
-                  // src={blog.thumbnail}
+                  src={blog.eyecatch?.url}
                   alt={blog.title}
                   className="w-1/3 h-auto object-cover"
                 />

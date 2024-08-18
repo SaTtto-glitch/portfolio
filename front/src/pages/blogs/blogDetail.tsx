@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getDetail } from "@/../../libs/client";
-import { Blog } from "@/types";
+import { getDetail, Blog } from "@/../../libs/client";
 
 export function BlogDetail(): JSX.Element {
   const { contentId } = useParams<{ contentId: string }>();

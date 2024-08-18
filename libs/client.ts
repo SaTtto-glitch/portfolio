@@ -1,10 +1,16 @@
 import { createClient } from "microcms-js-sdk";
+import { MicroCMSDate, MicroCMSImage } from "microcms-js-sdk";
 
-// MicroCMSの基本的な型を拡張
+export type MicroCMSContentId = {
+  id: string;
+};
+
 export type Blog = {
   title: string;
   content: string;
-};
+  eyecatch?: MicroCMSImage;
+} & MicroCMSContentId &
+  MicroCMSDate;
 
 if (!import.meta.env.VITE_MICROCMS_SERVICE_DOMAIN) {
   throw new Error("VITE_MICROCMS_SERVICE_DOMAIN is required");
